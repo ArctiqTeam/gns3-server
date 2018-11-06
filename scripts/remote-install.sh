@@ -148,7 +148,7 @@ log "Upgrade packages"
 apt-get upgrade --yes --force-yes -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold"
 
 log " Install GNS3 packages"
-apt-get install -y gns3-server
+apt-get install -y gns3-server=2.1.11~xenial1
 
 log "Create user GNS3 with /opt/gns3 as home directory"
 if [ ! -d "/opt/gns3/" ]
