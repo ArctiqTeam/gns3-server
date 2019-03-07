@@ -224,7 +224,7 @@ console log
 
 
 script
-    exec start-stop-daemon --start --make-pidfile --pidfile /var/run/gns3.pid --chuid gns3 --exec "/usr/bin/gns3server"
+    exec start-stop-daemon --start --make-pidfile --pidfile /var/run/gns3.pid --chuid gns3 --exec "/usr/local/bin/gns3server"
 end script
 
 pre-start script
@@ -260,7 +260,7 @@ Group=gns3
 PermissionsStartOnly=true
 ExecStartPre=/bin/mkdir -p /var/log/gns3 /var/run/gns3
 ExecStartPre=/bin/chown -R gns3:gns3 /var/log/gns3 /var/run/gns3
-ExecStart=/usr/bin/gns3server --log /var/log/gns3/gns3.log \
+ExecStart=/usr/local/bin/gns3server --log /var/log/gns3/gns3.log \
      --pid /var/run/gns3/gns3.pid --daemon
 Restart=on-abort
 PIDFile=/var/run/gns3/gns3.pid
